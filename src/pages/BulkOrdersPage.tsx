@@ -45,7 +45,7 @@ const BulkOrdersPage = () => {
 
     const enquiryDetails = `🏪 Bulk Order Enquiry from M V Traders Website%0A%0A👤 Contact Details:%0AName: ${formData.name}%0ACompany: ${formData.company || 'N/A'}%0APhone: ${formData.phone}%0AEmail: ${formData.email}%0A%0A📦 Products Interested:%0A${selectedProductNames}%0A%0A📊 Expected Quantity: ${formData.quantity}%0A%0A💬 Message:%0A${formData.message || 'No additional message'}`;
 
-    const whatsappNumber = '919876543210'; // Replace with actual WhatsApp number
+    const whatsappNumber = '917373961569'; // M V Traders WhatsApp number
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${enquiryDetails}`;
     
     window.open(whatsappUrl, '_blank');

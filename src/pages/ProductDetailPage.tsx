@@ -36,7 +36,7 @@ const ProductDetailPage = () => {
 
   const handleBulkInquiry = () => {
     const message = `Hi! I'm interested in bulk ordering of ${product.name}. Could you please share the wholesale pricing and minimum order quantity?`;
-    const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/917373961569?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

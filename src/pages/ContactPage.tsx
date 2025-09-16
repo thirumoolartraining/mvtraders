@@ -27,7 +27,7 @@ const ContactPage = () => {
   const handleWhatsAppContact = () => {
     const contactMessage = `👋 Hello M V Traders!%0A%0A👤 Name: ${formData.name}%0A📧 Email: ${formData.email}%0A📱 Phone: ${formData.phone}%0A%0A📋 Subject: ${formData.subject}%0A%0A💬 Message:%0A${formData.message}`;
     
-    const whatsappNumber = '919876543210'; // Replace with actual WhatsApp number
+    const whatsappNumber = '917373961569'; // M V Traders WhatsApp number
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${contactMessage}`;
     
     window.open(whatsappUrl, '_blank');
@@ -203,7 +203,7 @@ const ContactPage = () => {
                   For immediate assistance with orders or product queries, WhatsApp us directly.
                 </p>
                 <Button 
-                  onClick={() => window.open('https://wa.me/919876543210?text=Hi M V Traders! I need help with...', '_blank')}
+                  onClick={() => window.open('https://wa.me/917373961569?text=Hi M V Traders! I need help with...', '_blank')}
                   variant="outline" 
                   className="w-full"
                 >

@@ -67,7 +67,7 @@ const Header = () => {
               className="hidden sm:flex items-center space-x-2"
               asChild
             >
-              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/917373961569" target="_blank" rel="noopener noreferrer">
                 <Phone className="w-4 h-4" />
                 <span className="hidden md:inline">WhatsApp</span>
               </a>
@@ -125,7 +125,7 @@ const Header = () => {
                   className="w-full justify-start"
                   asChild
                 >
-                  <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/917373961569" target="_blank" rel="noopener noreferrer">
                     <Phone className="w-4 h-4 mr-2" />
                     WhatsApp Contact
                   </a>

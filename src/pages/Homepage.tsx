@@ -281,7 +281,7 @@ const Homepage = () => {
                         <Link to="/bulk-orders">Get Bulk Quote</Link>
                       </Button>
                       <Button size="lg" variant="outline" asChild>
-                        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/917373961569" target="_blank" rel="noopener noreferrer">
                           WhatsApp Inquiry
                         </a>
                       </Button>

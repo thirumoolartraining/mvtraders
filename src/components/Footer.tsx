@@ -123,7 +123,7 @@ const Footer = () => {
                 className="w-full btn-gold"
                 asChild
               >
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/917373961569" target="_blank" rel="noopener noreferrer">
                   <Phone className="w-4 h-4 mr-2" />
                   WhatsApp Orders
                 </a>
