@@ -20,7 +20,7 @@ const ShopPage = () => {
   
   // Filter products
   const filteredProducts = useMemo(() => {
-    let filtered = category 
+    let filtered = category
       ? products.filter(p => p.category === category)
       : products;
 
@@ -39,17 +39,19 @@ const ShopPage = () => {
       }
     }
 
-    // Sort products
+    const sorted = [...filtered];
+
+    // Sort products (avoid mutating the source array)
     switch (sortBy) {
       case 'price-low':
-        return filtered.sort((a, b) => a.price - b.price);
+        return sorted.sort((a, b) => a.price - b.price);
       case 'price-high':
-        return filtered.sort((a, b) => b.price - a.price);
+        return sorted.sort((a, b) => b.price - a.price);
       case 'name':
-        return filtered.sort((a, b) => a.name.localeCompare(b.name));
+        return sorted.sort((a, b) => a.name.localeCompare(b.name));
       case 'featured':
       default:
-        return filtered.sort((a, b) => {
+        return sorted.sort((a, b) => {
           if (a.featured && !b.featured) return -1;
           if (!a.featured && b.featured) return 1;
           return 0;

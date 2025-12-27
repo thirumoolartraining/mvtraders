@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,8 +7,10 @@ import { CheckCircle2 } from 'lucide-react';
 const OrderConfirmation = () => {
   const navigate = useNavigate();
   
-  // Generate a random order ID (in a real app, this would come from your backend)
-  const orderId = `ORD-${Math.floor(100000 + Math.random() * 900000)}`;
+  const orderId = useMemo(
+    () => `ORD-${Math.floor(100000 + Math.random() * 900000)}`,
+    []
+  );
 
   return (
     <div className="container mx-auto px-4 py-16 text-center">
@@ -55,12 +58,17 @@ const OrderConfirmation = () => {
             >
               Continue Shopping
             </Button>
-            <Button 
-              onClick={() => navigate('/track-order')}
+            <Button
+              onClick={() => {
+                const message = `Hi! I'd like to track my order ${orderId}. Could you please share the status and tracking details?`;
+                const url = `https://wa.me/917373961569?text=${encodeURIComponent(message)}`;
+                const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                if (newWindow) newWindow.opener = null;
+              }}
               variant="default"
               className="w-full sm:w-auto"
             >
-              Track Order
+              Track via WhatsApp
             </Button>
           </div>
         </CardContent>
