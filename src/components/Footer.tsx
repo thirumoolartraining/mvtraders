@@ -12,9 +12,9 @@ const Footer = () => {
 
   const customerCare = [
     { name: 'Contact Us', href: '/contact' },
-    { name: 'Shipping Info', href: '/shipping' },
-    { name: 'Return Policy', href: '/returns' },
-    { name: 'FAQ', href: '/faq' },
+    { name: 'Shipping Policy', href: '/shipping' },
+    { name: 'Cancellation & Refund', href: '/cancellation-refund' },
+    { name: 'Terms of Service', href: '/terms' },
   ];
 
   return (
@@ -90,8 +90,8 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-background/80 text-sm">+91 98765 43210</p>
-                  <p className="text-background/60 text-xs">Mon-Sat 9AM-6PM</p>
+                  <p className="text-background/80 text-sm">+91 73739 61569</p>
+                  <p className="text-background/60 text-xs">Mon-Sat 9AM-7PM</p>
                 </div>
               </div>
               

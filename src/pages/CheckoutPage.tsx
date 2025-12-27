@@ -199,26 +199,29 @@ const CheckoutPage = () => {
                       </div>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
                         className="h-8 w-8 p-0"
                         onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
                       >
                         <Minus className="h-4 w-4" />
                       </Button>
                       <span className="w-8 text-center">{item.quantity}</span>
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
                         className="h-8 w-8 p-0"
                         onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
                       >
                         <Plus className="h-4 w-4" />
                       </Button>
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="sm"
                         className="h-8 w-8 p-0 text-destructive"
                         onClick={() => removeItem(item.product.id)}
                       >

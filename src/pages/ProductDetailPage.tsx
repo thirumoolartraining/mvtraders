@@ -19,9 +19,9 @@ const ProductDetailPage = () => {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
         <h1 className="text-3xl font-serif mb-4">Product not found</h1>
-        <Link to="/shop">
-          <Button>Back to Shop</Button>
-        </Link>
+        <Button asChild>
+          <Link to="/shop">Back to Shop</Link>
+        </Button>
       </div>
     );
   }
@@ -37,7 +37,8 @@ const ProductDetailPage = () => {
   const handleBulkInquiry = () => {
     const message = `Hi! I'm interested in bulk ordering of ${product.name}. Could you please share the wholesale pricing and minimum order quantity?`;
     const whatsappUrl = `https://wa.me/917373961569?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    const newWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    if (newWindow) newWindow.opener = null;
   };
 
   const increaseQuantity = () => setQuantity(prev => prev + 1);

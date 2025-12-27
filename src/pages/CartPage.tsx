@@ -13,11 +13,9 @@ const CartPage = () => {
         <ShoppingBag className="mx-auto h-24 w-24 text-muted-foreground mb-6" />
         <h1 className="text-3xl font-serif mb-4">Your cart is empty</h1>
         <p className="text-muted-foreground mb-8">Add some delicious products to get started</p>
-        <Link to="/shop">
-          <Button size="lg" className="bg-gradient-gold text-charcoal">
-            Continue Shopping
-          </Button>
-        </Link>
+        <Button size="lg" className="bg-gradient-gold text-charcoal" asChild>
+          <Link to="/shop">Continue Shopping</Link>
+        </Button>
       </div>
     );
   }
@@ -101,16 +99,12 @@ const CartPage = () => {
                     <span>₹{total}</span>
                   </div>
                 </div>
-                <Link to="/checkout" className="w-full">
-                  <Button className="w-full bg-gradient-gold text-charcoal hover:opacity-90">
-                    Proceed to Checkout
-                  </Button>
-                </Link>
-                <Link to="/shop" className="block mt-3">
-                  <Button variant="outline" className="w-full">
-                    Continue Shopping
-                  </Button>
-                </Link>
+                <Button className="w-full bg-gradient-gold text-charcoal hover:opacity-90" asChild>
+                  <Link to="/checkout">Proceed to Checkout</Link>
+                </Button>
+                <Button variant="outline" className="w-full mt-3" asChild>
+                  <Link to="/shop">Continue Shopping</Link>
+                </Button>
               </CardContent>
             </Card>
           </div>

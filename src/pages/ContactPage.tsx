@@ -25,12 +25,24 @@ const ContactPage = () => {
   };
 
   const handleWhatsAppContact = () => {
-    const contactMessage = `👋 Hello M V Traders!%0A%0A👤 Name: ${formData.name}%0A📧 Email: ${formData.email}%0A📱 Phone: ${formData.phone}%0A%0A📋 Subject: ${formData.subject}%0A%0A💬 Message:%0A${formData.message}`;
-    
+    const contactMessage = [
+      '👋 Hello M V Traders!',
+      '',
+      `👤 Name: ${formData.name}`,
+      `📧 Email: ${formData.email}`,
+      `📱 Phone: ${formData.phone || 'N/A'}`,
+      '',
+      `📋 Subject: ${formData.subject}`,
+      '',
+      '💬 Message:',
+      formData.message,
+    ].join('\n');
+
     const whatsappNumber = '917373961569'; // M V Traders WhatsApp number
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${contactMessage}`;
-    
-    window.open(whatsappUrl, '_blank');
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(contactMessage)}`;
+
+    const newWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    if (newWindow) newWindow.opener = null;
     
     toast({
       title: "Message sent via WhatsApp",
@@ -146,7 +158,7 @@ const ContactPage = () => {
                   <Phone className="h-5 w-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-muted-foreground">+91 98765 43210</p>
+                    <p className="text-muted-foreground">+91 73739 61569</p>
                     <p className="text-sm text-muted-foreground">Mon-Sat, 9 AM - 7 PM</p>
                   </div>
                 </div>
@@ -155,7 +167,7 @@ const ContactPage = () => {
                   <MessageCircle className="h-5 w-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium">WhatsApp</p>
-                    <p className="text-muted-foreground">+91 98765 43210</p>
+                    <p className="text-muted-foreground">+91 73739 61569</p>
                     <p className="text-sm text-muted-foreground">Quick response guaranteed</p>
                   </div>
                 </div>
@@ -202,9 +214,14 @@ const ContactPage = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   For immediate assistance with orders or product queries, WhatsApp us directly.
                 </p>
-                <Button 
-                  onClick={() => window.open('https://wa.me/917373961569?text=Hi M V Traders! I need help with...', '_blank')}
-                  variant="outline" 
+                <Button
+                  onClick={() => {
+                    const message = 'Hi M V Traders! I need help with...';
+                    const url = `https://wa.me/917373961569?text=${encodeURIComponent(message)}`;
+                    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                    if (newWindow) newWindow.opener = null;
+                  }}
+                  variant="outline"
                   className="w-full"
                 >
                   <MessageCircle className="w-4 h-4 mr-2" />

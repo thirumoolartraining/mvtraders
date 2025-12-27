@@ -43,12 +43,29 @@ const BulkOrdersPage = () => {
       .filter(Boolean)
       .join(', ');
 
-    const enquiryDetails = `🏪 Bulk Order Enquiry from M V Traders Website%0A%0A👤 Contact Details:%0AName: ${formData.name}%0ACompany: ${formData.company || 'N/A'}%0APhone: ${formData.phone}%0AEmail: ${formData.email}%0A%0A📦 Products Interested:%0A${selectedProductNames}%0A%0A📊 Expected Quantity: ${formData.quantity}%0A%0A💬 Message:%0A${formData.message || 'No additional message'}`;
+    const enquiryDetails = [
+      '🏪 Bulk Order Enquiry from M V Traders Website',
+      '',
+      '👤 Contact Details:',
+      `Name: ${formData.name}`,
+      `Company: ${formData.company || 'N/A'}`,
+      `Phone: ${formData.phone}`,
+      `Email: ${formData.email}`,
+      '',
+      '📦 Products Interested:',
+      selectedProductNames || 'N/A',
+      '',
+      `📊 Expected Quantity: ${formData.quantity}`,
+      '',
+      '💬 Message:',
+      formData.message || 'No additional message',
+    ].join('\n');
 
     const whatsappNumber = '917373961569'; // M V Traders WhatsApp number
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${enquiryDetails}`;
-    
-    window.open(whatsappUrl, '_blank');
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(enquiryDetails)}`;
+
+    const newWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    if (newWindow) newWindow.opener = null;
     
     toast({
       title: "Bulk enquiry sent!",
@@ -241,8 +258,8 @@ const BulkOrdersPage = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Call our bulk sales team directly
                 </p>
-                <Button variant="outline" size="sm">
-                  📞 +91 98765 43210
+                <Button variant="outline" size="sm" asChild>
+                  <a href="tel:+917373961569">📞 +91 73739 61569</a>
                 </Button>
               </CardContent>
             </Card>
