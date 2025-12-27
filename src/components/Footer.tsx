@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -33,20 +33,9 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-background/80 text-sm leading-relaxed">
-              Authentic pure chekku oils and traditional homemade pickles. 
+              Authentic pure chekku oils and traditional homemade pickles.
               Preserving heritage recipes for generations, straight from our family to yours.
             </p>
-            <div className="flex space-x-3">
-              <Button size="sm" variant="outline" className="w-10 h-10 p-0">
-                <Facebook className="w-4 h-4" />
-              </Button>
-              <Button size="sm" variant="outline" className="w-10 h-10 p-0">
-                <Instagram className="w-4 h-4" />
-              </Button>
-              <Button size="sm" variant="outline" className="w-10 h-10 p-0">
-                <Twitter className="w-4 h-4" />
-              </Button>
-            </div>
           </div>
 
           {/* Quick Links */}
